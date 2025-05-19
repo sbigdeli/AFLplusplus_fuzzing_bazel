@@ -13,7 +13,10 @@ This Bazel toolchain configuration is designed to integrate AFL++ with Bazel bui
     afl-fuzz -i path/to/input -o path/to/output -- path/to/binary
     ```
 
+# Example how to build with bazel and fuzz
 1. export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 2. export AFL_SKIP_CPUFREQ=1
 3. bazelisk build //fuzz_directory:fuzz --extra_toolchains=//afl-toolchain:cc_toolchain_for_linux_x86_64_afl
-4. afl-fuzz -i /home/sbigdeli/Desktop/LIA2/rdswf-lund-lia-gen3/fuzz_directory/input_corpus -o fuzz_directory/output -- /home/sbigdeli/Desktop/LIA2/rdswf-lund-lia-gen3/bazel-bin/fuzz_directory/fuzz
+4. afl-fuzz -i /path_to_input_corpus -o fuzz_directory/output -- /path_to_binary_built_with_bazel/bazel-bin/fuzz_directory/fuzz
+
+##### example afl-fuzz -i /home/sbigdeli/Desktop/LIA2/AFLplusplus_fuzzing_bazel/fuzz_directory/input_corpus -o fuzz_directory/output -- /home/sbigdeli/Desktop/LIA2/AFLplusplus_fuzzing_bazel/bazel-bin/fuzz_directory/fuzz
