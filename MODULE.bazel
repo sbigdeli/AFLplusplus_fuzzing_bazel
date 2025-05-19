@@ -1,0 +1,2 @@
+register_toolchains("//afl-toolchain:cc_toolchain_for_linux_x86_64_afl")
+bazel_dep(name = "platforms", version = "0.0.8")
